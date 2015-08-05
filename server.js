@@ -2,6 +2,7 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
+var request = require("request");
 
 
 /**
@@ -95,10 +96,16 @@ var SampleApp = function() {
     self.createRoutes = function() {
         self.routes = { };
 
-        self.routes['/asciimo'] = function(req, res) {
-            var link = "http://i.imgur.com/kmbjB.png";
-            res.send("<html><body><img src='" + link + "'></body></html>");
-        };
+        self.routes['/game/players'] = function(req, res) {
+            var temp;
+            request("http://home.tjbenator.com:7878/v2/users/activelist?token=90747CF82B55B6F8E91C3D043CCB4A229453CD65AB87A722D8A1ECB057C8FF22", function(error, response, body){
+                temp = body;
+            });
+
+            res.setHeader('Content-Type', 'text/plain');
+            //res.send("Number of players online: " + num_players + "\n Playerlist: " + playerlist);
+            res.send("temp");
+        }
 
         self.routes['/'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
