@@ -99,11 +99,11 @@ var SampleApp = function() {
         self.routes['/game/players'] = function(req, res) {
             var temp;
             request("http://home.tjbenator.com:7878/v2/users/activelist?token=90747CF82B55B6F8E91C3D043CCB4A229453CD65AB87A722D8A1ECB057C8FF22", function(error, response, body){
-                temp = response;
+                console.log(body);
             });
 
             //res.send("Number of players online: " + num_players + "\n Playerlist: " + playerlist);
-            res.send(JSON.stringify(temp));
+            res.send("test");
         }
 
         self.routes['/'] = function(req, res) {
