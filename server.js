@@ -101,7 +101,7 @@ var SampleApp = function() {
                 var players = JSON.parse(body).activeusers.split("\t");
 
                 res.setHeader('Content-Type', 'text/plain');
-                res.send("Number of players online: " + players.length + "\n Playerlist: " + players.join("\t"));
+                res.send("Number of players online: " + players.length + "\nPlayerlist: " + players.join("\t"));
             });
         }
 
