@@ -103,7 +103,7 @@ var SampleApp = function() {
             });
 
             //res.send("Number of players online: " + num_players + "\n Playerlist: " + playerlist);
-            res.send(temp);
+            res.send(JSON.stringify(temp));
         }
 
         self.routes['/'] = function(req, res) {
