@@ -152,7 +152,7 @@ var SlashTerraria = function() {
 /**
  *  main():  Main code.
  */
-var zapp = new SampleApp();
+var zapp = new SlashTerraria();
 zapp.initialize();
 zapp.start();
 
