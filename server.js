@@ -1,14 +1,10 @@
 #!/bin/env node
-//  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
 var request = require("request");
 
 
-/**
- *  Define the sample application.
- */
-var SampleApp = function() {
+var SlashTerraria = function() {
 
     //  Scope.
     var self = this;
@@ -132,10 +128,6 @@ var SampleApp = function() {
         }
     };
 
-
-    /**
-     *  Initializes the sample application.
-     */
     self.initialize = function() {
         self.setupVariables();
         self.populateCache();
@@ -146,9 +138,6 @@ var SampleApp = function() {
     };
 
 
-    /**
-     *  Start the server (starts up the sample application).
-     */
     self.start = function() {
         //  Start the app on the specific interface (and port).
         self.app.listen(self.port, self.ipaddress, function() {
@@ -157,8 +146,7 @@ var SampleApp = function() {
         });
     };
 
-};   /*  Sample Application.  */
-
+};
 
 
 /**
