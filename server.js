@@ -104,7 +104,7 @@ var SampleApp = function() {
 
             res.setHeader('Content-Type', 'text/plain');
             //res.send("Number of players online: " + num_players + "\n Playerlist: " + playerlist);
-            res.send("temp");
+            res.send(temp);
         }
 
         self.routes['/'] = function(req, res) {
