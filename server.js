@@ -101,6 +101,9 @@ var SlashTerraria = function() {
                 } else {
                     num_players = 0;
                 }
+                players.forEach(function(val, index, arr){
+                    arr[index] = "@"+val;
+                });
 
                 res.setHeader('Content-Type', 'text/plain');
                 res.send("Number of players online: " + num_players + "\nPlayerlist: " + players.join("\t"));
