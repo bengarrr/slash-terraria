@@ -99,6 +99,8 @@ var SampleApp = function() {
         self.routes['/game/players'] = function(req, res) {
             request("http://home.tjbenator.com:7878/v2/users/activelist?token=90747CF82B55B6F8E91C3D043CCB4A229453CD65AB87A722D8A1ECB057C8FF22", function(error, response, body) {
                 var players = JSON.parse(body).activeusers.split("\t");
+                console.log(players[0]);
+
 
                 res.setHeader('Content-Type', 'text/plain');
                 res.send("Number of players online: " + players.length + "\nPlayerlist: " + players.join("\t"));
